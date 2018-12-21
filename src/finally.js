@@ -4,11 +4,11 @@ var status = new Set([])
 
 status.add('Init')
 
-fetch('https://jsonplaceholder.typicode.com/todos/1')
+fetch('https://jsonplaceholder.typicode.com/todos/1fhghb')
   .then(response => {
     if (!response.ok) {
       status.add('Error API')
-      throw Error('Unsuccessful response')
+      return Promise.reject(new Error('Error API'))
     }
     status.add('Successfully')
 
